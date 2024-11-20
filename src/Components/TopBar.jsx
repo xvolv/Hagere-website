@@ -6,11 +6,13 @@ import Posts from './Posts';
 import telegramSvg from "../assets/images/telegram.png";
 import Contact from './pages/Contact';
 import About from './pages/About';
+import Converter from './Converter';
 const TopBar = () => {
   const logoRef = useRef(null);
   const descSectionRef = useRef(null);
   const telegramSectionRef = useRef(null); // Ref for the Telegram section
   const contactSectionRef = useRef(null); // Ref for the Contact section
+  const converterSectionRef = useRef(null);
   const textRef = useRef(null); // Ref for the animated text
   const centerTextRef = useRef(null); // Ref for the center text
 
@@ -25,6 +27,9 @@ const TopBar = () => {
   const scrollToTelegram = () => {
     telegramSectionRef.current.scrollIntoView({ behavior: 'smooth' });
   };
+  const scrollToTools = () => {
+    converterSectionRef.current.scrollIntoView({ behavior: "smooth" });
+  }
   const scrollTODescription = () => {
     descSectionRef.current.scrollIntoView({ behavior: 'smooth' });
   };
@@ -79,7 +84,7 @@ const TopBar = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100  ">
       <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl p-4 flex justify-between items-center h-24">
         <div className="flex flex-col">
           <a href="#posts">
@@ -112,11 +117,19 @@ const TopBar = () => {
             About
           </button>
           <button
+            onClick={scrollToTools}
+            className="font-ga text-cyan-500 cursor-pointer bg-transparent border-2 border-cyan-500 rounded px-4 py-2 hover:bg-cyan-500 hover:text-white transition"
+          >
+            Tools
+          </button>
+
+          <button
             onClick={scrollToAddress}
             className="font-ga text-cyan-500 cursor-pointer bg-transparent border-2 border-cyan-500 rounded px-4 py-2 hover:bg-cyan-500 hover:text-white transition"
           >
             Contact
           </button>
+
         </div>
       </div>
 
@@ -154,7 +167,9 @@ const TopBar = () => {
       {/* Contact Section */}
 
       <About ref={descSectionRef} />
+      <Converter ref={converterSectionRef} />
       <Contact ref={contactSectionRef} />
+
 
 
     </div >
