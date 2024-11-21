@@ -7,6 +7,7 @@ import telegramSvg from "../assets/images/telegram.png";
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Converter from './Converter';
+import hum from "../assets/images/hum.svg"
 const TopBar = () => {
   const logoRef = useRef(null);
   const descSectionRef = useRef(null);
@@ -100,9 +101,12 @@ const TopBar = () => {
           <a href="#posts" className="font-ga text-cyan-500">HAGERE</a>
         </div>
         <div ref={centerTextRef} className="text-center font-bold text-lg text-cyan-600">
-          <span className="font-permanent">You are in the right place</span>
+          <span className="font-permanent hidden  lg:block ">Hagere Techs You Financial  Freedom</span>
         </div>
-        <div className="flex items-center">
+        <div className="md:hidden">
+          <img onClick={""} className="w-12 h-12 " src={hum} alt="" />
+        </div>
+        <div className=" items-center hidden md:block ">
           <button
             onClick={scrollToTelegram}
             className="font-ga text-cyan-500 cursor-pointer bg-transparent border-2 border-cyan-500 rounded px-4 py-2 hover:bg-cyan-500 hover:text-white transition"
@@ -142,18 +146,18 @@ const TopBar = () => {
 
       {/* Telegram Section */}
       <div ref={telegramSectionRef} className='flex mt-16 items-start justify-center'>
-        <img className="w-96 ml-3 mr-3" src={telegramImage} alt="" />
+        <img className="hidden md:block w-96 ml-3 mr-3" src={telegramImage} alt="" />
         <div className="pt-6 pb-10 text-center w-96 rounded-2xl bg-gray-200">
           <h2 className="text-2xl font-permanent mb-4 text-gray-600" ref={textRef}>Join Our Telegram Channel!</h2>
           <p className="mb-4 font-permanent text-md text-gray-500">Get the latest updates, tips, and exclusive content on how to make money online!</p>
 
-          <div className="flex ml-20 max-w-[300px] items-center justify-center bg-cyan-500 rounded-2xl hover:bg-cyan-300">
+          <div className="flex ml-10 md:ml-20 max-w-[300px] items-center justify-center bg-cyan-500 rounded-2xl hover:bg-cyan-300">
 
             <a
               href="https://t.me/hageretechs"
               target="_blank"
               rel="noopener noreferrer"
-              className=" text-white rounded flex items-center ml-1 cursor-pointer "
+              className=" text-white rounded flex items-center  ml-1 cursor-pointer "
             >
               <img className="w-12 h-12" src={telegramSvg} alt="" />
               <span>JOIN NOW</span>
