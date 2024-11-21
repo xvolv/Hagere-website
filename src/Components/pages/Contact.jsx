@@ -4,10 +4,10 @@ import phonecall from "../../assets/images/phonecall.svg";
 
 // Define the Contact component with a display name
 const Contact = forwardRef(function Contact(props, ref) {
-  const emailAddress = "nothingism99@gmail.com"; // Your email address
+  const emailAddress = "Hageretechs@gmail.com"; //  email address
   const subject = "Hello"; // Predefined subject
   const body = "I'd like to get in touch with you."; // Predefined body message
-  const phoneNumber = "(+251) 931932529"; // Your phone number
+  const phoneNumber = "(+251)........"; // Your phone number
   const [popupMessage, setPopupMessage] = useState('');
 
   const handleMouseEnter = () => {
