@@ -5,7 +5,7 @@ import { Sela } from "./sela";
 function Posts() {
   return (
     <div id="posts" className="flex-col">
-      <div className="flex  items-center justify-center ">
+      <div className="flex   items-center justify-center ">
         <h1 className="font-ga  border-2 border-cyan-500 rounded px-4 py-2 bg-cyan-500 text-white transition flex  items-center justify-center">my Latest youtube
           <a href="https://www.youtube.com/@Hageretechs">
             <img className="hover:scale-150 transition-transform duration-200" src={utube} alt="" />

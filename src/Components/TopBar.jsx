@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import homeImage from "../assets/images/hagereLogo.svg";
 import telegramImage from "../assets/images/telegram.jpg";
 import Posts from './Posts';
-import telegramSvg from "../assets/images/telegram.png";
+import telegramPng from "../assets/images/telegram.png";
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Converter from './Converter';
@@ -41,18 +41,20 @@ const TopBar = () => {
 
   useEffect(() => {
     // Create the endless animation for the Telegram section text
-    const tl = gsap.timeline({ repeat: -1 });
+    const tl = gsap.timeline({ repeat: 0 });
     tl.to(centerTextRef.current, {
-      y: -10,
-      scale: 1.1,
-      duration: 1,
+      y: 0,
+      scale: 1.8,
+      duration: 3,
       ease: "power1.inOut"
     })
       .to(centerTextRef.current, {
         y: 10,
         scale: 1,
         duration: 1,
-        ease: "power1.inOut"
+        ease: "power1.inOut",
+        
+
       });
 
     return () => {
@@ -85,7 +87,9 @@ const TopBar = () => {
   }, []);
 
   return (
-    <div className="bg-gray-100  ">
+<div className="bg-cover bg-center "
+            style={{ backgroundImage: "url('src/assets/images/background.jpg')" }}
+        >
       <div className="fixed top-0 left-0 right-0 z-50 bg-white shadow-2xl p-4 flex justify-between items-center h-24">
         <div className="flex flex-col">
           <a href="#posts">
@@ -101,7 +105,7 @@ const TopBar = () => {
           <a href="#posts" className="font-ga text-cyan-500">HAGERE</a>
         </div>
         <div ref={centerTextRef} className="text-center font-bold text-lg text-cyan-600">
-          <span className="font-permanent hidden  lg:block ">Hagere Techs You Financial  Freedom</span>
+          <span className="font-permanent hidden text-3xl lg:block ">Hagere Techs You Financial  Freedom</span>
         </div>
         <div className="md:hidden">
           <img onClick={""} className="w-12 h-12 " src={hum} alt="" />
@@ -151,7 +155,7 @@ const TopBar = () => {
           <h2 className="text-2xl font-permanent mb-4 text-gray-600" ref={textRef}>Join Our Telegram Channel!</h2>
           <p className="mb-4 font-permanent text-md text-gray-500">Get the latest updates, tips, and exclusive content on how to make money online!</p>
 
-          <div className="flex ml-10 md:ml-20 max-w-[300px] items-center justify-center bg-cyan-500 rounded-2xl hover:bg-cyan-300">
+          <div className="flex ml-10 md:ml-20 max-w-[200px]  justify-center bg-cyan-500 rounded-2xl hover:bg-cyan-300 active:bg-cyan-400">
 
             <a
               href="https://t.me/hageretechs"
@@ -159,7 +163,7 @@ const TopBar = () => {
               rel="noopener noreferrer"
               className=" text-white rounded flex items-center  ml-1 cursor-pointer "
             >
-              <img className="w-12 h-12" src={telegramSvg} alt="" />
+              <img className="w-12 h-12" src={telegramPng} alt="" />
               <span>JOIN NOW</span>
             </a>
           </div>
